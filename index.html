@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura de Lectoescritura Minecraft</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Pantalla de Inicio -->
+        <div id="start-screen" class="screen active">
+            <h1>🎮 Aventura de Lectoescritura 🎮</h1>
+            <div class="avatar-selection">
+                <h2>Elige tu Avatar</h2>
+                <div class="avatars">
+                    <div class="avatar" data-avatar="steve">
+                        <div class="avatar-icon avatar-steve"></div>
+                        <p>Steve</p>
+                    </div>
+                    <div class="avatar" data-avatar="alex">
+                        <div class="avatar-icon avatar-alex"></div>
+                        <p>Alex</p>
+                    </div>
+                    <div class="avatar" data-avatar="creeper">
+                        <div class="avatar-icon avatar-creeper"></div>
+                        <p>Creeper</p>
+                    </div>
+                </div>
+            </div>
+            <div class="level-selection">
+                <h2>Selecciona Nivel</h2>
+                <select id="level-select">
+                    <option value="1">Nivel 1: Sonidos y Letras</option>
+                    <option value="2">Nivel 2: Formación de Sílabas</option>
+                    <option value="3">Nivel 3: Palabras Completas</option>
+                    <option value="4">Nivel 4: Oraciones Cortas</option>
+                    <option value="5">Nivel 5: Textos Narrativos</option>
+                </select>
+            </div>
+            <button id="start-btn" class="main-button">Comenzar Aventura</button>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="game-screen" class="screen">
+            <div id="sidebar">
+                <div class="stats">
+                    <p>XP: <span id="xp-display">0</span></p>
+                    <p>Minerales: <span id="minerals-display">0</span></p>
+                </div>
+                <button id="progress-btn" class="sidebar-btn">Progreso</button>
+                <button id="profile-btn" class="sidebar-btn">Perfil</button>
+                <button id="repeat-btn" class="sidebar-btn">Repetir</button>
+                <button id="speak-btn" class="sidebar-btn">Leer en Voz Alta</button>
+                <button id="home-btn" class="sidebar-btn">Volver a Inicio</button>
+            </div>
+            <div id="game-area">
+                <div id="level-info">
+                    <h2 id="level-title">Nivel 1</h2>
+                    <p id="activity-number">Actividad 1</p>
+                </div>
+                <div id="activity"></div>
+                <div id="feedback"></div>
+            </div>
+        </div>
+
+        <!-- Pantalla de Progreso -->
+        <div id="progress-screen" class="screen">
+            <h2>Tu Progreso</h2>
+            <div id="progress-content"></div>
+            <button id="back-btn" class="main-button">Volver</button>
+        </div>
+
+        <!-- Pantalla de Perfil -->
+        <div id="profile-screen" class="screen">
+            <h2>Tu Perfil</h2>
+            <div id="profile-content">
+                <div class="profile-avatar"></div>
+                <p>Avatar: <span id="profile-avatar-name">Steve</span></p>
+                <p>XP Total: <span id="profile-xp">0</span></p>
+                <p>Minerales: <span id="profile-minerals">0</span></p>
+                <p>Nivel Actual: <span id="profile-level">1</span></p>
+            </div>
+            <button id="profile-back-btn" class="main-button">Volver</button>
+        </div>
+    </div>
+</body>
+</html>
