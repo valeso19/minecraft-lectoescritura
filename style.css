@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #8fbc8f;
+    color: #654321;
+    font-size: 18px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#app {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.screen.active {
+    display: block;
+}
+
+#start-screen {
+    text-align: center;
+    background: linear-gradient(to bottom, #d2b48c, #8fbc8f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-screen h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.avatar-selection, .level-selection {
+    margin: 30px 0;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #654321;
+}
+
+.avatar-selection h2, .level-selection h2 {
+    margin-bottom: 20px;
+}
+
+.avatars {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+.avatar.selected {
+    border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.2);
+}
+
+.avatar-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    border: 2px solid #000;
+    image-rendering: pixelated;
+}
+
+.avatar-steve {
+    background: linear-gradient(to bottom, #0099cc 40%, #6666cc 40%);
+}
+
+.avatar-alex {
+    background: linear-gradient(to bottom, #ff9966 40%, #66cc66 40%);
+}
+
+.avatar-creeper {
+    background: linear-gradient(to bottom, #00cc00 50%, #006600 50%);
+}
+
+#level-select {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid #654321;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+}
+
+.main-button {
+    background: #8fbc8f;
+    border: 3px solid #654321;
+    padding: 15px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    border-radius: 5px;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.main-button:hover {
+    background: #7aa87a;
+    transform: scale(1.05);
+}
+
+.main-button:active {
+    transform: scale(0.95);
+}
+
+#game-screen {
+    display: flex;
+    background: #d2b48c;
+}
+
+#sidebar {
+    width: 250px;
+    background: #c19a6b;
+    padding: 20px;
+    border-right: 3px solid #654321;
+    min-height: 100vh;
+}
+
+.stats {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 2px solid #654321;
+}
+
+.stats p {
+    font-size: 16px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.sidebar-btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    background: #8fbc8f;
+    border: 2px solid #654321;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.sidebar-btn:hover {
+    background: #7aa87a;
+}
+
+#game-area {
+    flex: 1;
+    padding: 30px;
+    background: #d2b48c;
+}
+
+#level-info {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#level-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#activity {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+    border: 3px solid #654321;
+    min-height: 300px;
+    margin-bottom: 20px;
+}
+
+#activity h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#activity button {
+    background: #8fbc8f;
+    border: 2px solid #654321;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 0.3s;
+}
+
+#activity button:hover {
+    background: #7aa87a;
+    transform: scale(1.05);
+}
+
+#activity img {
+    display: block;
+    margin: 20px auto;
+    border: 3px solid #654321;
+}
+
+#feedback {
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    min-height: 60px;
+}
+
+.correct {
+    animation: pulse 0.5s;
+    color: #00aa00;
+    font-weight: bold;
+}
+
+.wrong {
+    color: #cc0000;
+    font-weight: bold;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+#progress-screen, #profile-screen {
+    background: linear-gradient(to bottom, #d2b48c, #8fbc8f);
+    text-align: center;
+}
+
+#progress-content, #profile-content {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 10px;
+    border: 3px solid #654321;
+    margin: 30px auto;
+    max-width: 600px;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border: 3px solid #654321;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    #game-screen {
+        flex-direction: column;
+    }
+    
+    #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid #654321;
+        min-height: auto;
+    }
+    
+    .sidebar-btn {
+        display: inline-block;
+        width: auto;
+        margin: 5px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    
+    #start-screen h1 {
+        font-size: 1.8em;
+    }
+    
+    .avatars {
+        gap: 15px;
+    }
+    
+    .avatar-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
